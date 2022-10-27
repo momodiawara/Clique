@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="accueil" fx:id="panel" opacity="0.95" prefHeight="533.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_md.FXML_ProjetMDController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="9.0" prefHeight="511.0" prefWidth="645.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+         <children>
+            <Label layoutX="317.0" layoutY="67.0" prefHeight="53.0" prefWidth="285.0" text="Mathématiques discrètes" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Bookshelf Symbol 7" size="25.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnLaunch" layoutX="197.0" layoutY="391.0" prefHeight="32.0" prefWidth="240.0" style="-fx-background-color: #0d47a1;" text="Lancer l'application " textFill="WHITE">
+               <font>
+                  <Font name="Mongolian Baiti" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="80.0" layoutY="234.0" text="Projet : " underline="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="187.0" layoutY="232.0" text="Cliques de taille maximale">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="95.0" fitWidth="200.0" layoutX="29.0" layoutY="38.0">
+               <image>
+                  <Image url="@../res/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow height="0.0" radius="0.0" width="0.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
