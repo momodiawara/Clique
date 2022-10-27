@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="478.0" stylesheets="@canvas.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_md.FXMLCanvasController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="663.0" prefWidth="954.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group fx:id="canvasGroup" onMouseClicked="#handle" onMouseDragged="#handle" onMousePressed="#handle" onMouseReleased="#handle" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane fx:id="viewer" maxHeight="1500.0" maxWidth="2000.0" prefHeight="479.0" prefWidth="905.0" style="-fx-background-color: White;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <AnchorPane fx:id="description" layoutX="571.0" prefHeight="121.0" prefWidth="336.0" visible="false">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="133.0" prefWidth="336.0" spacing="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                                 <children>
+                                    <Label fx:id="text1" text="Parcours des sous graphes de taille x">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="text2" text="{ 2, 1, 5, 6 ,7}">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="text3" text="les sommets 1 et 2 sont voisins  ">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+            </Group>
+            <AnchorPane layoutX="1.0" layoutY="486.0" opacity="0.96" prefHeight="101.0" prefWidth="764.0" style="-fx-background-color: #0d47a1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="737.0" layoutY="8.0" prefHeight="111.0" prefWidth="163.0" spacing="3.0" AnchorPane.rightAnchor="5.0">
+                     <children>
+                        <JFXButton fx:id="resetButton" buttonType="RAISED" ellipsisString="" graphicTextGap="2.0" onAction="#ResetHandle" prefHeight="23.0" prefWidth="87.0" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fx:id="imgPlayPause" fitHeight="67.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                 <image>
+                                    <Image url="@../res/wiping-swipe-for-floors%20(1).png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Effacer tous" />
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="2.0" layoutY="7.0" prefHeight="120.0" prefWidth="219.0" AnchorPane.leftAnchor="2.0">
+                     <children>
+                        <JFXToggleButton fx:id="addNodeButton" onAction="#AddNodeHandle" prefHeight="60.0" prefWidth="197.0" text="Ajouter un noeud" textFill="WHITE" unToggleColor="WHITE">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="algoToggleGroup" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXToggleButton>
+                        <JFXToggleButton fx:id="addEdgeButton" onAction="#AddEdgeHandle" prefHeight="60.0" prefWidth="196.0" text="Ajouter une arête" textFill="WHITE" unToggleColor="WHITE">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="algoToggleGroup" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXToggleButton>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" layoutX="290.0" layoutY="6.0" prefHeight="100.0" prefWidth="200.0" spacing="17.0" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="274.0">
+                     <children>
+                        <AnchorPane prefHeight="116.0" prefWidth="123.0">
+                           <children>
+                              <JFXButton fx:id="btnPause" contentDisplay="GRAPHIC_ONLY" onAction="#PauseHandle" prefHeight="54.0" prefWidth="65.0" style="-fx-background-radius: 100;" visible="false">
+                                 <tooltip>
+                                    <Tooltip text="Pause" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="12.5" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <graphic>
+                                    <ImageView fx:id="playPauseImage1" fitHeight="109.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/round-pause-button.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnPlay" contentDisplay="GRAPHIC_ONLY" onAction="#PlayHandle" prefHeight="116.0" prefWidth="112.0" style="-fx-background-radius: 100;">
+                                 <tooltip>
+                                    <Tooltip text="Play" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="12.5" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <graphic>
+                                    <ImageView fx:id="playPauseImage" fitHeight="109.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/play-button.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
